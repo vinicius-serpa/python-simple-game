@@ -3,10 +3,9 @@ print("*********Divination Game!********")
 print("*********************************")
 
 secret_number = 42
-tentative = 1
 total_tentative = 3
 
-while (tentative <= total_tentative):
+for tentative in range(1, total_tentative + 1):
 
     print("Tentative {} of {}".format(tentative, total_tentative))
 
@@ -21,12 +20,11 @@ while (tentative <= total_tentative):
 
     if win:
         print("You win!")
+        break
     else:
         if major:
             print("You loose! Try a minor number.")
         elif minor:
             print("You loose! Try a major number.")
-
-    tentative = tentative + 1
 
 print("Game over")
