@@ -9,8 +9,12 @@ for tentative in range(1, total_tentative + 1):
 
     print("Tentative {} of {}".format(tentative, total_tentative))
 
-    user_number_str = input("Type your number: ")
+    user_number_str = input("Type your number between 1 and 100: ")
     user_number = int(user_number_str)
+
+    if (user_number < 1 or user_number > 100):
+        print("Type number between 1 and 100")
+        continue
 
     win = user_number == secret_number
     major = user_number > secret_number
