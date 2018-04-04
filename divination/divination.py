@@ -1,16 +1,24 @@
 print("*********************************")
-print("Divination Game!")
+print("*********Divination Game!********")
 print("*********************************")
 
 secret_number = 42
 
 user_number_str = input("Type your number: ")
-print("Your number is: ", user_number_str)
 user_number = int(user_number_str)
 
-if secret_number == user_number:
+win = user_number == secret_number
+major = user_number > secret_number
+minor = user_number < secret_number
+
+print("Your number is: ", user_number_str)
+
+if win:
     print("You win!")
 else:
-    print("You loose!")
+    if major:
+        print("You loose! Try a minor number.")
+    elif minor:
+        print("You loose! Try a major number.")
 
 print("Game over")
