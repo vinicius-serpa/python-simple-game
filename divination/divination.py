@@ -1,8 +1,10 @@
+import random
+
 print("*********************************")
 print("*********Divination Game!********")
 print("*********************************")
 
-secret_number = 42
+secret_number = round(random.random() * 100)
 total_tentative = 3
 
 for tentative in range(1, total_tentative + 1):
@@ -20,15 +22,18 @@ for tentative in range(1, total_tentative + 1):
     major = user_number > secret_number
     minor = user_number < secret_number
 
-    print("Your number is: ", user_number_str)
+    print("Your number is: {}".format(user_number_str))
 
     if win:
         print("You win!")
         break
     else:
-        if major:
-            print("You loose! Try a minor number.")
-        elif minor:
-            print("You loose! Try a major number.")
+        print("You loose!")
+        if (tentative != total_tentative):
+            if major:
+                print("Try a minor number.")
+            elif minor:
+                print("Try a major number.")
 
+print("The correct number is {}".format(secret_number))
 print("Game over")
