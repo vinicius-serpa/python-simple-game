@@ -4,7 +4,7 @@ print("*********************************")
 print("*********Divination Game!********")
 print("*********************************")
 
-secret_number = round(random.random() * 100)
+secret_number = random.randrange(1, 101)
 total_tentative = 3
 
 for tentative in range(1, total_tentative + 1):
