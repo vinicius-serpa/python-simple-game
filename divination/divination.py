@@ -4,8 +4,18 @@ print("*********************************")
 print("*********Divination Game!********")
 print("*********************************")
 
-secret_number = random.randrange(1, 101)
-total_tentative = 3
+print("select level: (1) easy, (2) normal, (3) hard")
+
+level = int(input("Type level:"))
+
+if (level == 1):
+    total_tentative = 20
+elif (level == 2):
+    total_tentative = 10
+else:
+    total_tentative = 5
+
+secret_number = random.randrange(1, 101)  # random use milliseconds by default to determine the seed
 
 for tentative in range(1, total_tentative + 1):
 
