@@ -16,6 +16,7 @@ else:
     total_tentative = 5
 
 secret_number = random.randrange(1, 101)  # random use milliseconds by default to determine the seed
+points = 1000
 
 for tentative in range(1, total_tentative + 1):
 
@@ -36,9 +37,11 @@ for tentative in range(1, total_tentative + 1):
 
     if win:
         print("You win!")
+        print("{} points".format(points))
         break
     else:
-        print("You loose!")
+        print("Wrong answer!")
+        points = points - abs(secret_number - user_number)
         if (tentative != total_tentative):
             if major:
                 print("Try a minor number.")
