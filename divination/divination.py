@@ -53,5 +53,6 @@ def play():
     print("The correct number is {}".format(secret_number))
     print("Game over")
 
+
 if (__name__ == "__main__"):
     play()
