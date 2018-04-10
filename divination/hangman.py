@@ -47,9 +47,9 @@ def print_header():
     print("*********************************")
 
 
-def get_secret_word():
+def get_secret_word(file_name = "secret_words.txt"):
     # list [], tuple (), set {}, dictionary {key : value}
-    with open("secret_words.txt", "r") as words_file:
+    with open(file_name, "r") as words_file:
         words_list = [line.strip().lower() for line in words_file]
     selected_index = random.randrange(0, len(words_list))
     return words_list[selected_index]
